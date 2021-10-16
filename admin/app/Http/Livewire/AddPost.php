@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Post;
 use Livewire\Component;
 use App\Models\Category;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Livewire\WithFileUploads;
 
@@ -32,6 +33,20 @@ class AddPost extends Component
     
     public function submit()
     {
+        $data = [
+            'category'  =>  $this->category,
+            'title'     =>  $this->title,
+            'heading'   =>  $this->heading,
+            'image'     =>  $this->image
+        ];
+        $validate = Validator::make($data, [
+            'category'  =>  'required',
+            'title'     =>  'required|unique:posts',
+            'heading'   =>  'required',
+            'image'     =>  'required|image'
+        ]);
+
+        if($validate->fails()) return session()->flash('error_toast', $validate->errors()->all());
 
         $this->slug = Str::slug($this->title);
         $post = new Post();

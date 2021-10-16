@@ -29,6 +29,7 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
+                <a style="float: right!important;" href="{{route('post.categories')}}" class="btn btn-primary btn-sm">Add New Category</a>
                 <h5 class="card-title">View Categories</h5>
 
                 <div class="table-responsive">

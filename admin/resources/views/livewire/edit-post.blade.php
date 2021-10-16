@@ -1,8 +1,9 @@
 <div class="card">
     <div class="card-body">
         @include('layouts.messages')
-        <a style="float: right!important;" href="{{route('post.view')}}" class="btn btn-primary btn-sm">View All Posts</a>
-        <h5 class="card-title">Add Post</h5>
+        <a style="float: right!important;" href="{{route('post.add')}}" class="btn btn-primary btn-sm m-2">Add New Post</a>
+        <a style="float: right!important;" href="{{route('post.view')}}" class="btn btn-primary btn-sm m-2">View All Posts</a>
+        <h5 class="card-title">Update Post</h5>
         <form wire:submit.prevent="submit">
             <div class="form-group">
                 <label for="category">Post Category</label>
@@ -22,8 +23,8 @@
                 <input type="text" id="heading" class="form-control" wire:model="heading">
             </div>
             <div class="form-group">
-                <label for="image">Post Image</label>
-                <input type="file" id="image" class="form-control" wire:model="image" accept=".jpg, .jpeg, .png, .gif, .webpp" required>
+                <label for="image">Post Image <small>(Not required)</small></label>
+                <input type="file" id="image" class="form-control" wire:model="image" accept=".jpg, .jpeg, .png, .gif, .webpp">
             </div>
             <div class="form-group">
                 @if($image)

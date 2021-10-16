@@ -54,7 +54,7 @@
                                     <a href="{{route('post.categories.edit', ['unique_id'=>base64_encode($category->unique_id)])}}" class="btn btn-warning btn-sm">
                                         <i class="bi bi-pencil-square"></i> Edit
                                     </a>
-                                    <button class="btn btn-danger btn-sm delete-cat" data-id="{{base64_encode($category->unique_id)}}">
+                                    <button class="btn btn-danger btn-sm delete-cat" data-module="category" data-id="{{base64_encode($category->unique_id)}}">
                                         <i class="bi bi-trash-fill"></i> Delete
                                     </button>
                                     <button class="btn btn-danger btn-sm" style="display: none" id="delete_cat_{{base64_encode($category->unique_id)}}" wire:click.prevent="delete('{{base64_encode($category->unique_id)}}')">
