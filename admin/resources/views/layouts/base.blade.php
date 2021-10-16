@@ -25,6 +25,8 @@
   <link href="{{asset('assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/quill/quill.bubble.css')}}" rel="stylesheet">
   <link href="{{asset('assets/vendor/simple-datatables/style.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/vendor/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet">
+  <link href="{{asset('assets/vendor/toastr/toastr.min.css')}}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
@@ -37,6 +39,16 @@
       font-size: 14px;
       font-weight: bold;
       margin-bottom: 5px;
+    }
+    textarea{
+      resize: none;
+    }
+    svg{
+      display: none;
+    }
+    table img{
+      height: 50px;
+      width: 70px;
     }
   </style>
   @livewireStyles
@@ -60,9 +72,9 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
   <!-- Vendor JS Files -->
   <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.bundle.js')}}"></script>
+  <script src="{{asset('assets/vendor/jquery.js')}}"></script>
   <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
   <script src="{{asset('assets/vendor/quill/quill.min.js')}}"></script>
   <script src="{{asset('assets/vendor/tinymce/tinymce.min.js')}}"></script>
@@ -71,8 +83,26 @@
   <script src="{{asset('assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
   <script src="{{asset('assets/vendor/echarts/echarts.min.js')}}"></script>
 
+  <script src="{{asset('assets/vendor/sweetalert2/sweetalert2.all.min.js')}}"></script>
+  <script src="{{asset('assets/vendor/toastr/toastr.js')}}"></script>
+
   <!-- Template Main JS File -->
   <script src="{{asset('assets/js/main.js')}}"></script>
+
+  <script>
+    $(document).ready(function(){
+        $(document).on('click', '.delete-cat', function(){
+            // alert('clicked');
+            var id = $(this).data('id');
+            var datamodule = $(this).data('module');
+
+            if(!confirm(`Are you sure to delete this ${datamodule}?`)) return toastr.error('Request cancelled', 'Cancelled!');
+
+            $('#delete_cat_'+id).click();
+        })
+    })
+  </script>
+
   @livewireScripts
 </body>
 
