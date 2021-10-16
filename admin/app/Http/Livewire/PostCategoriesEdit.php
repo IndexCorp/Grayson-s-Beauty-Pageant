@@ -64,13 +64,15 @@ class PostCategoriesEdit extends Component
     {
         $unique_id = base64_decode($unique_id);
         $category = Category::where('unique_id', $unique_id);
-        $category->delete();
-
-        $posts = Post::where('category_id', $unique_id);
+        
+        $posts = Post::where('category_id', $category->first()->id);
         $posts->delete();
+        
+        $category->delete();
 
         session()->flash('success_alert', 'Category deleted successfully');
     }
+    
     
     public function render()
     {
