@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -18,29 +18,35 @@
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
-        <x-jet-banner />
+    <body class="font-sans antialiased"> --}}
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+        {{-- <x-jet-banner /> --}}
+<x-app-header></x-app-header>
+<x-app-sidebar></x-app-sidebar>
+<main id="main">
+    <div class="min-h-screen bg-gray-100">
+        {{-- @livewire('navigation-menu') --}}
+        {{-- @include('components.app-header') --}}
+        <!-- Page Heading -->
+        @if (isset($header))
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
+        @endif
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+        <!-- Page Content -->
+        <main>
+            {{ $slot }}
+        </main>
+    </div>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
-
-        @stack('modals')
-
+    @stack('modals')
+</main>
+{{-- 
         @livewireScripts
     </body>
-</html>
+</html> --}}
+
+<x-app-footer></x-app-footer>
