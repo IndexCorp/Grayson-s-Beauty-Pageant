@@ -68,7 +68,7 @@
               <li><a href="contact.php">Osun State Chapter</a></li>
             </ul>
           </li>
-
+          <li><a href="competition.php">COMPETITION</a></li>
 
           <li><a href="contestants.php">CONTESTANTS</a></li>
           <li><a href="blog.php">BLOG</a></li>
