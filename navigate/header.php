@@ -60,17 +60,15 @@
             </ul>
           </li>
         -->
-          <li class="dropdown"><a href="#"><span>The Beauty of Africa</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>CONTESTANTS</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about_competition.php">Lagos State Chapter</a></li>
-              <li><a href="contact.php">Ogun State Chapter</a></li>
-              <li><a href="about_competition.php">Oyo State Chapter</a></li>
-              <li><a href="contact.php">Osun State Chapter</a></li>
+              <li><a href="contestants.php">Lagos State Chapter</a></li>
+              <li><a href="contestants.php">Ogun State Chapter</a></li>
+              <li><a href="contestants.php">Oyo State Chapter</a></li>
+              <li><a href="contestants.php">Osun State Chapter</a></li>
             </ul>
           </li>
-          <li><a href="competition.php">COMPETITION</a></li>
-
-          <li><a href="contestants.php">CONTESTANTS</a></li>
+          <li><a href="about_competition.php">COMPETITION</a></li>
           <li><a href="blog.php">BLOG</a></li>
           <li><a href="contact.php">CONTACT</a></li>
         

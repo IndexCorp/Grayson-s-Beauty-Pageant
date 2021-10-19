@@ -9,7 +9,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Contact Us | How to Apply</h2>
+          <h2>Contact Us</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Contact</li>
@@ -60,37 +60,19 @@
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="First Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name" required>
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-md-6 form-group">
-                  <input type="digit" name="phone_number" class="form-control" id="phone-number" placeholder="Phone Number" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="FullName" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
                 </div>
               </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="address" id="address" placeholder="Address" required>
+              <div class="row mt-3">
+                <div class="col-md-12 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
               </div>
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Bio Statement (One Paragraph max 300 words)." required></textarea>
-              </div>
-              <div class="row mt-3">
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <span class="" style="font-weight: 600;">Upload your Headshot Image *</span><br>
-                  <span class="fst-italic">One high Resolution, color image (max. 5mb)</span>
-                </div>
-                <div class="col-md-6 form-group">
-                  <input type="file" name="pics" class="form-control" id="pics" required>
-                </div>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
