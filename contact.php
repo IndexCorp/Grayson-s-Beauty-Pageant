@@ -24,8 +24,7 @@
       <div class="container">
 
       <div class="contact-header">
-        <p style="text-align: center; font-weight:700; color:brown;">Booking and Appearance Request for Grayson's Model Winner | Marketing, Advertising and Sponsorship Request | Hosting Request for the Competition | Become a Candidate | Any other information about the Competition</p>
-        <center><h6>Please fill out the form below. We will direct your application to the Peagant Director and you will be followed up directly if you are chosen.</h6></center>
+        <center><h6>Please fill out the form below if you have any information to relay to us.</h6></center>
       </div>
 
         <div class="row mt-5">

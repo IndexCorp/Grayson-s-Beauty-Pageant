@@ -30,6 +30,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/mystyle.css" rel="stylesheet">
+  <!-- Splide CSS -->
+  <link href="assets/css/splide.min.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Sailor - v4.3.0
@@ -68,6 +70,7 @@
               <li><a href="contestants.php">Osun State Chapter</a></li>
             </ul>
           </li>
+          <li><a href="vote.php">VOTE</a></li>
           <li><a href="about_competition.php">COMPETITION</a></li>
           <li><a href="blog.php">BLOG</a></li>
           <li><a href="contact.php">CONTACT</a></li>

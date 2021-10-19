@@ -252,6 +252,38 @@
       </div>
     </section><!-- End Team Section -->
 
+    <!-- ======= Team Section ======= -->
+    <!-- <section id="team" class="section-bg">
+      <div class="container">
+        <div class="section-header">
+          <h3 class="section-title">Grayson's Model</h3>
+          <span class="section-divider"></span>
+          <p class="section-description">Weelcome to Grayson's Model Wall of Quotes</p>
+        </div>
+
+        <div class="splide">
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+              Prev
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+              Next
+            </button>
+          </div>
+
+
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide"><img src="assets/img/1.jpg" alt=""></li>
+              <li class="splide__slide"><img src="assets/img/2.jpg" alt=""></li>
+              <li class="splide__slide"><img src="assets/img/5.jpg" alt=""></li>
+              <li class="splide__slide"><img src="assets/img/4.jpg" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
     
     <section id="features" class="features">
       <div class="container">
