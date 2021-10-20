@@ -37,14 +37,16 @@
 
           <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
             <div class="portfolio-wrap">
-              <div class="card" style="width: 18rem;">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid card-img-top" alt="Card image cap">
-                <div class="card-body">
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+              <center><caption class="text-center">Amanda Jepson</caption></center>
+              <div class="portfolio-info">
+                <p class="location">From Olomi, Ibadan, Nigeria</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item blemished">
@@ -55,10 +57,10 @@
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
                   <a href="assets/img/team/team-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
@@ -69,10 +71,10 @@
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
                   <a href="assets/img/team/team-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item blemished">
@@ -83,10 +85,10 @@
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
                   <a href="assets/img/team/team-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
@@ -97,10 +99,10 @@
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
                   <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item blemished">
@@ -110,11 +112,11 @@
               <div class="portfolio-info">
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/team/team-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                  <a href="assets/img/team/team-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
@@ -125,10 +127,10 @@
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
                   <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item blemished">
@@ -139,10 +141,10 @@
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
                   <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
@@ -153,12 +155,12 @@
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
                   <a href="assets/img/team/team-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
-          
+
           <div class="col-lg-3 col-md-6 portfolio-item blemished">
             <div class="portfolio-wrap">
               <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
@@ -167,10 +169,10 @@
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
                   <a href="assets/img/team/team-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
@@ -181,24 +183,24 @@
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
                   <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
           <div class="col-lg-3 col-md-6 portfolio-item blemished">
             <div class="portfolio-wrap">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
               <center><caption class="text-center">Amanda Jepson</caption></center>
               <div class="portfolio-info">
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                  <a href="assets/img/team/team-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
+              <center><a href="#" class="btn btn-primary text-center mt-2">VOTE</a></center>
           </div>
 
         </div>

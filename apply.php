@@ -26,7 +26,7 @@
                 <p style="text-align: center; font-weight:700; color:brown;">Booking and Appearance Request for Grayson's Model Winner | Marketing, Advertising and Sponsorship Request | Hosting Request for the Competition | Become a Candidate | Any other information about the Competition</p>
                 <center><h6>Please fill out the form below. We will direct your application to the Peagant Director and you will be followed up directly if you are chosen.</h6></center>
             </div>
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="" method="POST" class="" enctype="multipart/form-data">
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <input type="text" name="name" class="form-control" id="name" placeholder="First Name" required>
@@ -50,7 +50,7 @@
                     <input type="text" class="form-control" name="address" id="address" placeholder="Address" required>
                 </div>
                 <div class="form-group mt-3">
-                    <textarea class="form-control" name="message" rows="5" placeholder="Bio Statement (One Paragraph max 300 words)." required></textarea>
+                    <textarea class="form-control" name="bio" rows="5" placeholder="Bio Statement (One Paragraph max 300 words)." required></textarea>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-3 form-group mt-3 mt-md-0">
@@ -61,12 +61,12 @@
                     <input type="file" name="pics" class="form-control" style="padding-top: 10px;" id="pics" required>
                 </div>
                 </div>
-                <div class="my-3">
+                <!-- <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message">Your message has been sent. Thank you!</div> -->
                 </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
+                <div class="text-center"><button type="submit" name="apply">Send Message</button></div>
             </form>
 
         </div>
@@ -76,4 +76,52 @@
 
 <?php 
     include("navigate/footer.php");
+
+    if(isset($_POST['apply'])) {
+        $name = $_POST['name'];
+        $lastname = $_POST['lastname'];
+        $phone_number = $_POST['phone_number'];
+        $email = $_POST['email'];
+        $subject = $_POST['subject'];
+        $address = $_POST['address'];
+        $bio = $_POST['bio'];
+        
+        if(!empty($name) || !empty($lastname) || !empty($phone_number) || !empty($email) || !empty($subject) || !empty($address) || !empty($bio) || !empty($pics)) {
+    
+        $name = $getFromU->checkInput($name);
+        $lastname = $getFromU->checkInput($lastname);
+        $phone_number = $getFromU->checkInput($phone_number);
+        $email = $getFromU->checkInput($email);
+        $subject = $getFromU->checkInput($subject);
+        $address = $getFromU->checkInput($address);
+        $bio = $getFromU->checkInput($bio);
+    
+            if(strlen($name) <= 2 || strlen($lastname) <= 2) {
+                echo '<script>alert("Name must be more than 2 Characters");</script>';
+            } else {
+                if(strlen($phone_number) <= 10) {
+                    echo '<script>alert("Incomplete Phone Number");</script>';
+                } else {
+                    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                        echo '<script>alert("Invalid Email Address");</script>';
+                    } else {
+                        if($getFromU->checkEmail($email) == true) {
+                            echo '<script>alert("Email Existing");</script>';
+                        } else {
+                            if(isset($_FILES['pics'])) {
+                                if(!empty($_FILES['pics']['name'][0])) {
+                                    $fileRoot = $getFromU->uploadImage($_FILES['pics']);
+                                    $enter = $getFromU->create('apply', array('name'=>$name, 'lastname' => $lastname, 'phonenumber'=>$phone_number, 'email' => $email, 'subject'=>$subject, 'address' => $address, 'bio' => $bio, 'image' => $fileRoot));
+                                    var_dump($enter);
+                                    echo '<script>alert("Successfully Sent");</script>';
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        
+        }
+    }
+    
 ?>
