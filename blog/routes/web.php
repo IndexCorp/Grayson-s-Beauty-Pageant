@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Livewire\BlogCategoryLists;
+use App\Http\Livewire\BlogHome;
+use App\Http\Livewire\BlogPostDetails;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', BlogHome::class);
+
+Route::get('/category/{slug}', BlogCategoryLists::class)->name('category');
+
+Route::get('/post/{slug}', BlogPostDetails::class)->name(('post-details'));
