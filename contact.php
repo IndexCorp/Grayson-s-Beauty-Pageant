@@ -56,7 +56,42 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <?php 
+              if(isset($_POST['contact'])) {
+                  $name = $_POST['name'];
+                  $email = $_POST['email'];
+                  $subject = $_POST['subject'];
+                  $message = $_POST['message'];
+
+                  if(!empty($name) || !empty($email) || !empty($subject) || !empty($message)) {
+                            
+                      $name = $getFromU->checkInput($name);
+                      $email = $getFromU->checkInput($email);
+                      $subject = $getFromU->checkInput($subject);
+                      $message = $getFromU->checkInput($message);
+                      $table_name = 'contact';
+
+                      if(strlen($name) <= 6) {
+                        echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!&nbsp;</strong>Name should be atleast 7 Characters</div>';
+                      } else {
+                          if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                            echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!&nbsp;</strong>Invalid Email Address</div>';
+                          } else {
+                              if($getFromU->checkEmail($email, $table_name) == true) {
+                                  echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!&nbsp;</strong>Email Existing</div>';
+                              } elseif(strlen($message) <= 19) {
+                                  echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!&nbsp;</strong>Your Message should be atleast 20 Characters</div>';
+                              } else {
+                                  $getFromU->create('contact', array('fullname'=>$name, 'email' => $email, 'subject'=>$subject, 'message' => $message));
+                                  echo '<div class="alert alert-success alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Success&nbsp;</strong>We will get back to you shortly</div>';
+                              }
+                          }
+                      }
+                  }
+              }
+          ?>
+
+            <form action="" method="post" role="form" class="">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="FullName" required>
@@ -71,14 +106,9 @@
                 </div>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Bio Statement (One Paragraph max 300 words)." required></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Discuss" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button name="contact" class="btn btn-danger" type="submit">Send Message</button></div>
             </form>
 
           </div>

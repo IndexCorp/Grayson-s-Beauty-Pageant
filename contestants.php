@@ -1,5 +1,14 @@
 <?php 
+
   include("navigate/header.php");
+
+  if(isset($_GET["chapter"])){
+    $chapt = $_GET["chapter"];
+    // echo "<script>alert('".$chapt."');</script>";
+  } else {
+      $chapt = '';
+  }
+
 ?>
 
   <main id="main">
@@ -33,175 +42,40 @@
           </div>
         </div>
 
+        <?php 
+            // $information = $getFromU -> selectTable('apply');
+            $information = $getFromU -> select_cond_table('apply', 'chapter', $chapt)
+        ?>
+
         <div class="row portfolio-container">
 
-          <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+          <?php foreach($information as $info): ?>
+              <div class="col-lg-3 col-md-6 portfolio-item <?= $info->category; ?>">
+                <div class="portfolio-wrap">
+                  <img src="applyImages/<?=$info->image?>" class="img-fluid" alt="">
+                  <center><caption class="text-center"><?=$info->firstname?>&nbsp;<?=$info->lastname?></caption></center>
+                  <div class="portfolio-info">
+                    <p class="location"><?=$info->address?></p>
+                    <div class="portfolio-links">
+                      <a href="<?=$info->image?>" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item blemished">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item blemished">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item blemished">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item blemished">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php endforeach; ?>
           
-          <div class="col-lg-3 col-md-6 portfolio-item blemished">
+          <!-- <div class="col-lg-3 col-md-6 portfolio-item blemished">
             <div class="portfolio-wrap">
-              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
               <center><caption class="text-center">Amanda Jepson</caption></center>
               <div class="portfolio-info">
                 <p class="location">From Olomi, Ibadan, Nigeria</p>
                 <div class="portfolio-links">
-                  <a href="assets/img/team/team-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
+                  <a href="assets/img/team/team-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item imperfectly-perfect">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item blemished">
-            <div class="portfolio-wrap">
-              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-              <center><caption class="text-center">Amanda Jepson</caption></center>
-              <div class="portfolio-info">
-                <p class="location">From Olomi, Ibadan, Nigeria</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/team/team-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
+          </div> -->
 
         </div>
 

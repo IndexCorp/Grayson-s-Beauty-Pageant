@@ -1,11 +1,16 @@
 <?php 
+
     include 'core/init.php';
+    // $select_table = 'chapter';
+    $chapters = $getFromU -> selectTable('chapter');
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+<base href="<?=BASE_URL?>">
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -57,8 +62,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.php" class="active">HOME</a></li>
-          <li><a href="about.php">ABOUT</a></li>
+          <li><a href="" class="active">HOME</a></li>
+          <li><a href="about">ABOUT</a></li>
        <!--   <li class="dropdown"><a href="#"><span>COMPETITION</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="about_competition.php">ABOUT THE COMPETITION</a></li>
@@ -68,16 +73,15 @@
         -->
           <li class="dropdown"><a href="#"><span>CONTESTANTS</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="contestants.php">Lagos State Chapter</a></li>
-              <li><a href="contestants.php">Ogun State Chapter</a></li>
-              <li><a href="contestants.php">Oyo State Chapter</a></li>
-              <li><a href="contestants.php">Osun State Chapter</a></li>
+              <?php foreach($chapters as $chap): ?>
+                <li><a href="contestants/<?=$chap->id?>"><?=$chap->chapter?></a></li>
+              <?php endforeach; //<?=$chap->id ?>
             </ul>
           </li>
-          <li><a href="vote.php">VOTE</a></li>
-          <li><a href="about_competition.php">COMPETITION</a></li>
-          <li><a href="blog.php">BLOG</a></li>
-          <li><a href="contact.php">CONTACT</a></li>
+          <li><a href="vote">VOTE</a></li>
+          <li><a href="competition">COMPETITION</a></li>
+          <li><a href="blog">BLOG</a></li>
+          <li><a href="contact">CONTACT</a></li>
         
         
         <!--  <li class="dropdown"><a href="#"><span>UNWANTED</span> <i class="bi bi-chevron-down"></i></a>
@@ -89,7 +93,7 @@
             </ul>
           </li>-->
 
-          <li><a href="apply.php" class="getstarted">Apply Now!!!</a></li>
+          <li><a href="apply" class="getstarted">Apply Now!!!</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

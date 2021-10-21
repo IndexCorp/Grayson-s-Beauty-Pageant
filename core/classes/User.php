@@ -13,8 +13,8 @@
             return $var;
         }
 
-        public function checkEmail($email) {
-            $stmt = $this->pdo->prepare("SELECT `email` FROM `apply` WHERE `email` = :email");
+        public function checkEmail($email, $table_name) {
+            $stmt = $this->pdo->prepare("SELECT `email` FROM `$table_name` WHERE `email` = :email");
             $stmt->bindParam(":email", $email, PDO::PARAM_STR);
             $stmt->execute();
 
@@ -31,14 +31,14 @@
             $filename = basename($file['name']);
             $fileTmp = $file['tmp_name'];
             $fileSize = $file['size'];
-            $folderName = 'applyImage/';
+            $folderName = 'applyImages/';
             $newName = mt_rand(1111, 9999).mt_rand(1111, 9999).".png";
             $joinFile = $folderName.$newName;
             $myTime = date("D j F, Y; h:i a");
             $array_allow = array('jpg', 'png', 'jpeg', 'bmp');
             $file_ext = strtolower(pathinfo($filename)['extension']);
 
-            if($fileSize > 500000) {
+            if($fileSize > 500000000) {
                 return false;
             } elseif(!in_array($file_ext, $array_allow)) {
                 return false;
@@ -102,6 +102,21 @@
                 //var_dump($sql);
                 $stmt -> execute();
             }
+        }
+
+        //select anything selectable
+        public function selectTable($select_table) {
+            $stmt = $this->pdo->prepare("SELECT * FROM `$select_table`");
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        }
+
+        //selecting with condition
+        public function select_cond_table($select_cond_table, $columns, $chapt) {
+            $stmt = $this->pdo->prepare("SELECT * FROM `$select_cond_table` WHERE `$columns` = :chapter");
+            $stmt->bindParam(":chapter", $chapt, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
         public function checkUsername($username) {

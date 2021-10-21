@@ -1,0 +1,26 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^contestants/([a-zA-Z0-9_-]+)/?$ contestants.php?chapter=$1 [QSA]
+
+#RewriteRule ^beauty/([a-zA-Z0-9_-]+)/?$ ([a-zA-Z0-9_-]+)/?$.php?$1 [QSA]
+
+RewriteRule ^apply/?$ apply.php [QSA]
+RewriteRule ^competition/?$ about_competition.php [QSA]
+RewriteRule ^about/?$ about.php [QSA]
+#RewriteRule ^apply/?$ apply.php [QSA]
+RewriteRule ^blog/?$ blog.php [QSA]
+#RewriteRule ^contact/?$ contact.php [QSA]
+RewriteRule ^vote/?$ vote.php [QSA]
+
+RewriteRule ^beauty/?$ index.php [QSA]
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ index.php?$1 [QSA]
