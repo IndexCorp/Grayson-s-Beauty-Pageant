@@ -75,11 +75,24 @@
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/vendor/wow/wow.js">
   <link rel="stylesheet" href="assets/vendor/wow/wow.min.js">
+  <!-- Splide J>S -->
+  <link rel="stylesheet" href="assets/js/splide.min.js">
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.easing.min.js"></script>
+  <script>
+    document.addEventListener( 'DOMContentLoaded', function() {
+      var splide = new Splide( '.splide' );
+      splide.mount();
+    } );
+    var elms = document.getElementsByClassName( 'splide' );
+
+    for ( var i = 0; i < elms.length; i++ ) {
+      new Splide( elms[ i ] ).mount();
+    }
+  </script>
 
 </body>
 
