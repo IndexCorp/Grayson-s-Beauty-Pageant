@@ -36,6 +36,11 @@
   <link rel="stylesheet" href="assets/vendor/wow/wow.js">
   <link rel="stylesheet" href="assets/vendor/wow/wow.min.js">
 
+  <!-- Font-->
+	<link rel="stylesheet" type="text/css" href="assets/css/nunito-font.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="assets/css/apply.css"/>
+
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/mystyle.css" rel="stylesheet">
