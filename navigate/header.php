@@ -36,6 +36,9 @@
   <link rel="stylesheet" href="assets/vendor/wow/wow.js">
   <link rel="stylesheet" href="assets/vendor/wow/wow.min.js">
 
+  
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
   <!-- Font-->
 	<link rel="stylesheet" type="text/css" href="assets/css/nunito-font.css">
 	<!-- Main Style Css -->
@@ -46,6 +49,12 @@
   <link href="assets/css/mystyle.css" rel="stylesheet">
   <!-- Splide CSS -->
   <link href="assets/css/splide.min.css" rel="stylesheet">
+  <style>
+    .swiper-slide-active {
+      transform: scale(1.2);
+      transition: .4s;
+    }
+  </style>
 
   <!-- =======================================================
   * Template Name: Sailor - v4.3.0
@@ -58,10 +67,10 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header" class="fixed-top d-flex align-items-center color-purple" style="background-color: rgb(230, 53, 200);">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.php">Grayson's Model</a></h1>
+      <h1 class="logo me-auto"><a href="<?= BASE_URL ?>">Grayson's Model</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 

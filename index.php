@@ -217,31 +217,31 @@
           <span class="section-divider"></span>
           <p class="section-description">Weelcome to Grayson's Model Wall of Quotes</p>
         </div>
-        <div class="row wow fadeInUp">
+        <div class="row wow fadeInUp swiper-container">
           <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="assets/img/1.jpg" alt=""></div>
+            <div class="member swiper-wrapper">
+              <div class="pic swiper-slide"><img src="assets/img/1.jpg" alt=""></div>
           
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="assets/img/2.jpg" alt=""></div>
+            <div class="member swiper-wrapper">
+              <div class="pic swiper-slide"><img src="assets/img/2.jpg" alt=""></div>
              
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="assets/img/5.jpg" alt=""></div>
+            <div class="member swiper-wrapper">
+              <div class="pic swiper-slide"><img src="assets/img/5.jpg" alt=""></div>
             
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="assets/img/4.jpg" alt=""></div>
+            <div class="member swiper-wrapper">
+              <div class="pic swiper-slide"><img src="assets/img/4.jpg" alt=""></div>
             
             </div>
           </div>

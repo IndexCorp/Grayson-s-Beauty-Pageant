@@ -83,15 +83,19 @@
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.easing.min.js"></script>
   <script>
-    document.addEventListener( 'DOMContentLoaded', function() {
-      var splide = new Splide( '.splide' );
-      splide.mount();
-    } );
-    var elms = document.getElementsByClassName( 'splide' );
-
-    for ( var i = 0; i < elms.length; i++ ) {
-      new Splide( elms[ i ] ).mount();
-    }
+      var swiper = new Swiper('.swiper-container', {
+    slidesPerView: `auto`,
+    spaceBetween: 40,
+    loop: true,
+    effect: `slide`,
+    centeredSlides: true,
+    grabCursor: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+  
   </script>
 
 </body>
