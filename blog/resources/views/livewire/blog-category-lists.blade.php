@@ -24,7 +24,7 @@
                             <div class="col-lg-6">
                                 <div class="blog-post">
                                 <div class="blog-thumb">
-                                    <img src="{{asset('assets/images/'.$post->image)}}" alt="">
+                                    <img src="{{env('FILE_URL').'/posts/'.$post->image}}" alt="">
                                 </div>
                                 <div class="down-content">
                                     <span>{{$post->category_name}}</span>
@@ -51,7 +51,7 @@
                             @endforeach
                         </div>
                     </div>
-    
+
                     {{$posts->links()}}
                 </div>
                 <div class="col-md-4">

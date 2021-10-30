@@ -7,7 +7,7 @@
             {{-- {{dd($featured)}} --}}
             @foreach($featured as $post)
             <div class="item">
-              <img src="{{asset('assets/images/'.$post->image)}}" alt="" height="300px">
+              <img src="{{env('FILE_URL').'/posts/'.$post->image}}" alt="" height="300px">
               <div class="item-content">
                 <div class="main-content">
                   <div class="meta-category">
@@ -27,8 +27,8 @@
         </div>
       </div>
       <!-- Banner Ends Here -->
-  
-  
+
+
       <section class="blog-posts">
         <div class="container">
           <div class="row">
@@ -40,7 +40,7 @@
                   <div class="col-lg-12">
                     <div class="blog-post">
                       <div class="blog-thumb">
-                        <img src="{{asset('assets/images/'.$post->image)}}" alt="">
+                        <img src="{{env('FILE_URL').'/posts/'.$post->image}}" alt="">
                       </div>
                       <div class="down-content">
                         <span>{{$post->category_name}}</span>
@@ -72,7 +72,7 @@
                     </div>
                   </div>
                   @endforeach
-                  
+
 
                   <div class="col-lg-12">
                     <div class="main-button">
@@ -88,5 +88,4 @@
           </div>
         </div>
       </section>
-  
-      
+
