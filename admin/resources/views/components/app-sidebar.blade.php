@@ -12,10 +12,10 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#posts-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Blog</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="posts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="{{route('post.add')}}">
               <i class="bi bi-circle"></i><span>Add Post</span>
@@ -29,6 +29,25 @@
           <li>
             <a href="{{route('post.categories')}}">
               <i class="bi bi-circle"></i><span>Post Categories</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+      
+      
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#gallery-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Gallery</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="gallery-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{route('gallery.add')}}">
+              <i class="bi bi-circle"></i><span>Manage Gallery</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{route('gallery.cat.add')}}">
+              <i class="bi bi-circle"></i><span>Gallery Categories</span>
             </a>
           </li>
         </ul>
