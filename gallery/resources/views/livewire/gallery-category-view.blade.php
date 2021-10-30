@@ -3,7 +3,7 @@
     <div class="container-fluid">
     	<div class="row">
     		<div class="card-columns justify-content-center align-items-center">
-                @foreach(\App\Models\Gallery::latest()->get() as $gallery)
+                @foreach($galleries as $gallery)
                 <div class="card card-pin">
                     @if($gallery->type == 1)
     				<img class="card-img" src="{{env('FIle_URL').'/gallery/'.$gallery->url}}" alt="{{$gallery->title}}">
