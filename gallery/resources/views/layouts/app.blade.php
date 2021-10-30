@@ -10,36 +10,41 @@
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
 
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+    </style>
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-    <a class="navbar-brand font-weight-bolder mr-3" href="index.html"><img src="assets/img/logo.png"></a>
-    <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarsDefault">
-    	<ul class="navbar-nav mr-auto align-items-center">
-    		<form class="bd-search hidden-sm-down">
-    			<input type="text" class="form-control bg-graylight border-0 font-weight-bold" id="search-input" placeholder="Search..." autocomplete="off">
-    			<div class="dropdown-menu bd-search-results" id="search-results">
-    			</div>
-    		</form>
-    	</ul>
-    	<ul class="navbar-nav ml-auto align-items-center">
-    		<li class="nav-item">
-    		<a class="nav-link active" href="{{route('gallery.home')}}">Home</a>
-    		</li>
-            @php($categories = \App\Models\GalleryCategory::all())
+        <a class="navbar-brand font-weight-bolder mr-3" href="index.html"><img src="{{asset('assets/img/logo.png')}}"></a>
+        <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsDefault">
+            <ul class="navbar-nav mr-auto align-items-center">
+                <form class="bd-search hidden-sm-down">
+                    <input type="text" class="form-control bg-graylight border-0 font-weight-bold" id="search-input" placeholder="Search..." autocomplete="off">
+                    <div class="dropdown-menu bd-search-results" id="search-results">
+                    </div>
+                </form>
+            </ul>
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item">
+                <a class="nav-link active" href="{{route('gallery.home')}}">Home</a>
+                </li>
+                @php($categories = \App\Models\GalleryCategory::all())
 
-            @foreach($categories as $category)
-    		<li class="nav-item">
-                <a class="nav-link" href="{{route('gallery.category', ['slug'=>$category->slug])}}">{{$category->name}}</a>
-    		</li>
-            @endforeach
-    	</ul>
-    </div>
+                @foreach($categories as $category)
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('gallery.category', ['slug'=>$category->slug])}}">{{$category->name}}</a>
+                </li>
+                @endforeach
+            </ul>
+        </div>
     </nav>
     <main role="main">
 
