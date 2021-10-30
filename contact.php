@@ -9,7 +9,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Contact Us | How to Apply</h2>
+          <h2>Contact Us</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Contact</li>
@@ -24,8 +24,7 @@
       <div class="container">
 
       <div class="contact-header">
-        <p style="text-align: center; font-weight:700; color:brown;">Booking and Appearance Request for Grayson's Model Winner | Marketing, Advertising and Sponsorship Request | Hosting Request for the Competition | Become a Candidate | Any other information about the Competition</p>
-        <center><h6>Please fill out the form below. We will direct your application to the Peagant Director and you will be followed up directly if you are chosen.</h6></center>
+        <center><h6>Please fill out the form below if you have any information to relay to us.</h6></center>
       </div>
 
         <div class="row mt-5">
@@ -57,47 +56,59 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <?php 
+              if(isset($_POST['contact'])) {
+                  $name = $_POST['name'];
+                  $email = $_POST['email'];
+                  $subject = $_POST['subject'];
+                  $message = $_POST['message'];
+
+                  if(!empty($name) || !empty($email) || !empty($subject) || !empty($message)) {
+                            
+                      $name = $getFromU->checkInput($name);
+                      $email = $getFromU->checkInput($email);
+                      $subject = $getFromU->checkInput($subject);
+                      $message = $getFromU->checkInput($message);
+                      $table_name = 'contact';
+
+                      if(strlen($name) <= 6) {
+                        echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!&nbsp;</strong>Name should be atleast 7 Characters</div>';
+                      } else {
+                          if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                            echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!&nbsp;</strong>Invalid Email Address</div>';
+                          } else {
+                              if($getFromU->checkEmail($email, $table_name) == true) {
+                                  echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!&nbsp;</strong>Email Existing</div>';
+                              } elseif(strlen($message) <= 19) {
+                                  echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Warning!&nbsp;</strong>Your Message should be atleast 20 Characters</div>';
+                              } else {
+                                  $getFromU->create('contact', array('fullname'=>$name, 'email' => $email, 'subject'=>$subject, 'message' => $message));
+                                  echo '<div class="alert alert-success alert-dismissible text-center" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><strong>Success&nbsp;</strong>We will get back to you shortly</div>';
+                              }
+                          }
+                      }
+                  }
+              }
+          ?>
+
+            <form action="" method="post" role="form" class="">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="First Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name" required>
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-md-6 form-group">
-                  <input type="digit" name="phone_number" class="form-control" id="phone-number" placeholder="Phone Number" required>
+                  <input type="text" name="name" class="form-control" id="name" placeholder="FullName" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required>
                 </div>
               </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="address" id="address" placeholder="Address" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Bio Statement (One Paragraph max 300 words)." required></textarea>
-              </div>
               <div class="row mt-3">
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <span class="" style="font-weight: 600;">Upload your Headshot Image *</span><br>
-                  <span class="fst-italic">One high Resolution, color image (max. 5mb)</span>
-                </div>
-                <div class="col-md-6 form-group">
-                  <input type="file" name="pics" class="form-control" id="pics" required>
+                <div class="col-md-12 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
                 </div>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Discuss" required></textarea>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button name="contact" class="btn btn-danger" type="submit">Send Message</button></div>
             </form>
 
           </div>
