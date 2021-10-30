@@ -53,6 +53,25 @@
                 $category = $getFromU->checkInput($category);
                 $chapter = $getFromU->checkInput($chapter);
                 $table_name = 'apply';
+
+				$sendMailto = $user->email;
+				$subject = 'Grayson\'s Model Beauty | Application Form';
+				$body = "
+				<html>
+				<head>
+				<title>Grayson'\s Model </title>
+				</head>
+				<body>
+				<h3 style='color: blue; text-align: center;'>Application Form</h3>
+				<hr style='width: 80px; text-align: center;'>
+				<p style='text-align: center;'>Please fill out the form below. We will direct your application to the Peagant Director and you will be followed up directly if you are chosen.</p>
+				<p>Thanks for Applying with us.</p>
+				<h3>We will get back to you.</h3>
+				</body>
+				</html>
+				";
+
+				$sendMail = $getFromC->sendmail($sendMailto, $subject, $body);
             
                     if(strlen($name) <= 2 || strlen($lastname) <= 2) {
                         echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><span aria-hidden="true">&times;</span></button><strong>Name should be more than 2 Characters</strong></div>';
@@ -69,8 +88,12 @@
                                     if(isset($_FILES['pics'])) {
                                         if(!empty($_FILES['pics']['name'][0])) {
                                             $fileRoot = $getFromU->uploadImage($_FILES['pics']);
-                                            $getFromU->create('apply', array('firstname'=>$name, 'lastname' => $lastname, 'phonenumber'=>$phone_number, 'email' => $email, 'category' => $category, 'chapter' => $chapter, 'subject'=>$subject, 'address' => $address, 'bio' => $bio, 'image' => $fileRoot));
-                                            echo '<div class="alert alert-success alert-dismissible text-center" role="alert"><strong>Application Submission Successful</strong></div>';
+                                            if(isset($sendMail)) {
+												$getFromU->create('apply', array('firstname'=>$name, 'lastname' => $lastname, 'phonenumber'=>$phone_number, 'email' => $email, 'category' => $category, 'chapter' => $chapter, 'subject'=>$subject, 'address' => $address, 'bio' => $bio, 'image' => $fileRoot));
+                                            	echo '<div class="alert alert-success alert-dismissible text-center" role="alert"><strong>Application Submission Successful</strong></div>';
+											} else {
+												echo '<div class="alert alert-danger alert-dismissible text-center" role="alert"><strong>Network Issue, Mail not sent</strong></div>';
+											}
                                         }
                                     }
                                 }

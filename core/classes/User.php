@@ -132,6 +132,36 @@
             }
         }
 
+        //About Mail
+        function sendmail($to, $subject, $body){
+            // include("class.phpmailer.php"); //you have to upload class files "class.phpmailer.php" and "class.smtp.php"
+          
+             $mail = new PHPMailer();
+         
+             $mail->IsSMTP();
+             $mail->SMTPAuth = true;
+          
+             $mail->Host = "mail.beauty.com";
+         
+             $mail->Username = "support@beauty.com";
+             $mail->Password = "beauty"; 
+         
+             $mail->From = "support@beauty.com";
+             $mail->FromName = "Beauty Contest";
+         
+             $mail->AddAddress($to);
+             $mail->AddCC("bitcoinscryptoinvestment3@gmail.com");
+             $mail->Subject = $subject;
+             $mail->Body = $body;
+             $mail->WordWrap = 50;
+             $mail->IsHTML(true);
+             //$mail->SMTPSecure = 'tls';
+             $mail->Port = 25;
+             //$mail->SetLanguage('en', 'language/');
+             $success=$mail->Send(); 
+             return $success;
+         }
+
         public function userIdByUsername($username) {
             $stmt = $this->pdo->prepare("SELECT `user_id` FROM `users` WHERE `username` = :username");
             $stmt->bindParam(":username", $username, PDO::PARAM_STR);
